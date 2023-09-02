@@ -8,7 +8,7 @@
 # instalation devdependencies @types of library
 - npm i webpack webpack-cli -D
 - npm i -D webpack-dev-server typescript ts-node sass sass-loader html-webpack-plugin eslint dotenv-webpack eslint-plugin-react eslint-webpack-plugin   
-- npm i -D terser-webpack-plugin style-loader mini-css-extract-plugin gzipper fork-ts-checker-webpack-plugin extract-css-chunks-webpack-plugin css-minimizer-webpack-plugin copy-webpack-plugin  clean-webpack-plugin @typescript-eslint/parser @typescript-eslint/eslint-plugin @types/webpack-env @types/webpack-dev-server @types/webpack
+- npm i -D terser-webpack-plugin style-loader mini-css-extract-plugin gzipper fork-ts-checker-webpack-plugin extract-css-chunks-webpack-plugin css-minimizer-webpack-plugin copy-webpack-plugin  clean-webpack-plugin @typescript-eslint/parser @typescript-eslint/eslint-plugin @types/webpack-env @types/webpack-dev-server @types/webpack css-loader
 
--  npm i -D @types/node @types/react @types/react-dom @types/react-router-dom @types/lodash @types/loadable__component  @types/dotenv-webpack @pmmmwh/react-refresh-webpack-plugin  @babel/runtime @babel/preset-typescript @babel/preset-react  @babel/preset-env @babel/plugin-transform-runtime @babel/core
+-  npm i -D @types/node @types/react @types/react-dom @types/react-router-dom @types/lodash @types/loadable__component  @types/dotenv-webpack @pmmmwh/react-refresh-webpack-plugin  @babel/runtime @babel/preset-typescript @babel/preset-react  @babel/preset-env @babel/plugin-transform-runtime @babel/core  
 
