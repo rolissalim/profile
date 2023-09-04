@@ -10,16 +10,27 @@ interface Configuration extends WebpackConfiguration {
 import ESLintPlugin from 'eslint-webpack-plugin';
 
 const config: Configuration = {
-    entry: './src/index.tsx',
+    entry: ['./i18n', './src/index.tsx'],
     output: {
         publicPath: '/',
     },
+
     // output: {
     //     path: path.resolve(__dirname, 'build'),
     //     filename: 'main-[hash].js'
     // }
     module: {
         rules: [
+            {
+                test: /\.(jpg|jpeg|png|svg|gif)$/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[hash].[ext]',
+                        outputPath: 'static',
+                    },
+                },
+            },
             {
                 test: /\.(ts|js)x?$/i,
                 exclude: /node_modules/,

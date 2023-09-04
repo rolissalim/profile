@@ -6,13 +6,15 @@
     },
     "plugins": [
       "@typescript-eslint",
-      "react-hooks"
+      "react-hooks",
+      "react"
     ],
     "extends": [
       "plugin:react/recommended",
       "plugin:@typescript-eslint/recommended"
     ],
     "rules": {
+      "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/no-explicit-any": "off",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "off",

@@ -10,10 +10,10 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import path from 'path';
-
+const autoprefixer = require('autoprefixer')
 const CopyPlugin = require('copy-webpack-plugin');
-const BundleAnalyzerPlugin =
-  require('webpack-bundle-analyzer').BundleAnalyzerPlugin; // uncomment if you want analyze js bundle file
+// const BundleAnalyzerPlugin =
+//   require('webpack-bundle-analyzer').BundleAnalyzerPlugin; // uncomment if you want analyze js bundle file
 
 module.exports = merge(common, {
   mode: 'production',
@@ -34,6 +34,17 @@ module.exports = merge(common, {
           {
             loader: 'resolve-url-loader',
             options: { sourceMap: false, debug: false, keepQuery: false },
+          },
+          {
+            // Loader for webpack to process CSS with PostCSS
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  autoprefixer
+                ]
+              }
+            }
           },
           {
             loader: 'sass-loader',
@@ -92,9 +103,9 @@ module.exports = merge(common, {
         chunkFilename: `static/css/[id].[contenthash].css`,
       }),
     ],
-    ...(process.env.NODE_ENV == 'production-analyze'
-      ? [new BundleAnalyzerPlugin()]
-      : []),
+    // ...(process.env.NODE_ENV == 'production-analyze'
+    //   ? [new BundleAnalyzerPlugin()]
+    //   : []),
   ],
   optimization: {
     minimize: true,
